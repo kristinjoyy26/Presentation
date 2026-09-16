@@ -862,6 +862,23 @@ function updateFullscreenUI() {
     headerBtn.setAttribute('title', isFs ? 'Exit Full Screen' : 'Toggle Full Screen');
     headerBtn.setAttribute('aria-label', isFs ? 'Exit Full Screen' : 'Toggle Full Screen');
   }
+
+  // Update Floating Fullscreen Button
+  const floatingBtn = document.getElementById('floatingFsBtn');
+  if (floatingBtn) {
+    const expandIcon = floatingBtn.querySelector('.icon-expand');
+    const compressIcon = floatingBtn.querySelector('.icon-compress');
+    const fsText = floatingBtn.querySelector('.fs-text');
+    if (expandIcon && compressIcon) {
+      expandIcon.style.display = isFs ? 'none' : 'block';
+      compressIcon.style.display = isFs ? 'block' : 'none';
+    }
+    if (fsText) {
+      fsText.textContent = isFs ? 'Exit Full Screen' : 'Full Screen';
+    }
+    floatingBtn.setAttribute('title', isFs ? 'Exit Full Screen Mode' : 'Full Screen Presentation Mode');
+    floatingBtn.setAttribute('aria-label', isFs ? 'Exit Full Screen Mode' : 'Toggle Full Screen');
+  }
 }
 
 // Fullscreen event listeners across browsers

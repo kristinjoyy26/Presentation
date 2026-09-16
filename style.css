@@ -2405,3 +2405,52 @@ input, textarea, select {
   }
 }
 
+/* ============================================================
+   FLOATING FULLSCREEN BUTTON
+   ============================================================ */
+.floating-fullscreen-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 990;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--plum-deep);
+  color: #FFFFFF;
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: 0 6px 20px rgba(62, 18, 69, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all var(--transition-fast);
+}
+
+.floating-fullscreen-btn:hover {
+  background: var(--plum-accent);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 28px rgba(62, 18, 69, 0.45), 0 0 0 2px var(--gold-primary);
+  color: #FFFFFF;
+}
+
+.floating-fullscreen-btn svg {
+  stroke: #FCD34D;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .floating-fullscreen-btn {
+    bottom: 18px;
+    right: 18px;
+    padding: 9px 12px;
+    font-size: 0.78rem;
+  }
+  .floating-fullscreen-btn .fs-text {
+    display: none;
+  }
+}
+
